@@ -1,0 +1,1 @@
+export { ReactComponent as EndIcon } from './end.svg'
