@@ -5,5 +5,5 @@ export default function SliderPage() {
   const [rangeValue, setRangeValue] = useState(1)
   const handleChange = (value: number) => setRangeValue(value)
 
-  return <Slider rangeValue={rangeValue} handleChange={handleChange} />
+  return <Slider value={rangeValue} handleChange={handleChange} />
 }

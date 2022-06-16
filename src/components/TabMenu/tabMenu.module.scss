@@ -1,0 +1,42 @@
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
+
+.wrapper {
+  @include flexbox.flexbox(center, center);
+  width: 500px;
+
+  ul {
+    --li-width: 160px;
+    --bar-size: 2.5px;
+    position: relative;
+    padding: 0 5px;
+    border-bottom: var(--bar-size) solid colors.$GRAY5;
+
+    .menu {
+      display: inline-block;
+      width: var(--li-width);
+      text-align: center;
+
+      button[type='button'] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.1rem;
+        color: colors.$GRAY4;
+        transition: 0.5s;
+      }
+    }
+
+    .menu.active button[type='button'] {
+      color: colors.$BLACK;
+    }
+
+    .bottomBar {
+      position: absolute;
+      bottom: calc(var(--bar-size) * -1);
+      width: var(--li-width);
+      height: var(--bar-size);
+      background-color: colors.$TURQ;
+      transition: 0.5s;
+    }
+  }
+}
