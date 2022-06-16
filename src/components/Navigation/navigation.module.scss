@@ -1,0 +1,26 @@
+@use '/src/styles/constants/colors';
+
+.wrapper {
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      color: colors.$GRAY;
+
+      &.active {
+        font-weight: 600;
+        color: colors.$BLUE;
+      }
+    }
+  }
+}

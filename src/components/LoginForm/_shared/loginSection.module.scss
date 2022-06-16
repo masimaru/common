@@ -1,0 +1,47 @@
+@use '/src/styles/constants/colors';
+
+.wrapper {
+  margin-bottom: 25px;
+
+  .label {
+    display: block;
+    padding-left: 2px;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: colors.$BLACK;
+  }
+
+  .inputBox {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.1rem;
+      background-color: colors.$GRAY6;
+      border: 1px solid colors.$GRAY4;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: colors.$GRAY4;
+      }
+    }
+
+    .iconBox {
+      position: absolute;
+      right: 10px;
+      bottom: 50%;
+      color: colors.$GRAY3;
+      transform: translateY(50%);
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .iconBox.active {
+      color: colors.$BLUE;
+    }
+  }
+}
