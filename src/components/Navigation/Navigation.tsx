@@ -8,17 +8,27 @@ export default function Navigation() {
       <ul>
         <li>
           <NavLink to='/' className={({ isActive }) => cx({ [styles.active]: isActive })}>
-            about
+            로그인 및 회원가입
           </NavLink>
         </li>
         <li>
-          <NavLink to='about2' className={({ isActive }) => cx({ [styles.active]: isActive })}>
-            about2
+          <NavLink to='slider' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            슬라이더
           </NavLink>
         </li>
         <li>
-          <NavLink to='about3' className={({ isActive }) => cx({ [styles.active]: isActive })}>
-            about3
+          <NavLink to='tabMenu' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            탭메뉴
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='toggle' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            토글
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='dropdown' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            드롭다운
           </NavLink>
         </li>
       </ul>

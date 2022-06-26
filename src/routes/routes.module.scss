@@ -1,13 +1,17 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 
-body {
-  background-color: colors.$GRAY5;
-}
-
 .app {
-  @include flexbox.flexbox(center, center);
-  flex-direction: column;
-  width: 1000px;
-  margin: 100px auto;
+  display: flex;
+  height: 100vh;
+
+  aside {
+    width: 300px;
+  }
+
+  main {
+    flex-grow: 1;
+    background-color: colors.$LIGHT_BLUE;
+    @include flexbox.flexbox(center, center);
+  }
 }
