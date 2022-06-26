@@ -21,22 +21,12 @@ export default function Email({ email, handleChange }: IProps) {
 
   return (
     <section className={styles.wrapper}>
+      <input type='text' id='email' value={email} onChange={handleChange} autoComplete='off' required />
       <label className={styles.label} htmlFor='email'>
-        E-mail
+        이메일
       </label>
-      <div className={styles.inputBox}>
-        <input
-          type='text'
-          id='email'
-          value={email}
-          onChange={handleChange}
-          placeholder='E-mail'
-          autoComplete='off'
-          required
-        />
-        <div className={cx(styles.iconBox, { [styles.active]: isValid })}>
-          <CircleCheckIcon fill='currentColor' />
-        </div>
+      <div className={cx(styles.iconBox, { [styles.active]: isValid })}>
+        <CircleCheckIcon fill='currentColor' />
       </div>
     </section>
   )

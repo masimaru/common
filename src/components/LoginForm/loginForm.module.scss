@@ -1,4 +1,53 @@
+@use '/src/styles/constants/colors';
+
 .wrapper {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
+  background-color: colors.$WHITE;
+  border-radius: 5px;
+
+  h2 {
+    padding: 15px 0;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid colors.$GRAY3;
+  }
+
+  .content {
+    padding: 0 20px;
+    margin-top: 45px;
+  }
+
+  .error {
+    padding: 0 20px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: colors.$RED;
+  }
+
+  footer {
+    padding: 0 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    button[type='submit'] {
+      width: 100%;
+      padding: 5px 0;
+      font-size: 25px;
+      font-weight: bold;
+      color: colors.$WHITE;
+      background-color: colors.$BLUE;
+      border-radius: 5px;
+    }
+
+    .linkBox {
+      margin-top: 20px;
+      text-align: right;
+
+      a {
+        color: colors.$GRAY2;
+      }
+    }
+  }
 }

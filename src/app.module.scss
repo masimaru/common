@@ -1,4 +1,9 @@
+@use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
+
+body {
+  background-color: colors.$GRAY5;
+}
 
 .app {
   @include flexbox.flexbox(center, center);

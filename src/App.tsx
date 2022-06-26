@@ -10,11 +10,11 @@ export default function App() {
   return (
     <div className={styles.app}>
       {/* <DropdownPage /> */}
-      {/* <LoginPage /> */}
+      <LoginPage />
       {/* <SliderPage /> */}
       {/* <TabMenuPage /> */}
       {/* <TogglePage /> */}
-      <IphonePage />
+      {/* <IphonePage /> */}
     </div>
   )
 }
