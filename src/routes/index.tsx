@@ -1,6 +1,7 @@
 import LoginForm from 'components/LoginForm/LoginForm'
 import Navigation from 'components/Navigation/Navigation'
 import DropdownPage from 'pages/DropdownPage'
+import InfiniteScrollPage from 'pages/InfiniteScrollPage/InfiniteScrollPage'
 import IphonePage from 'pages/IphonePage'
 import SliderPage from 'pages/SliderPage'
 import TabMenuPage from 'pages/TabMenuPage'
@@ -26,6 +27,7 @@ export default function App() {
           <Route path='toggle' element={<TogglePage />} />
           <Route path='dropdown' element={<DropdownPage />} />
           <Route path='iphone' element={<IphonePage />} />
+          <Route path='infinite' element={<InfiniteScrollPage />} />
 
           <Route path='*' element={<div>404</div>} />
         </Routes>

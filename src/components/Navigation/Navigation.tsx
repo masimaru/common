@@ -36,6 +36,11 @@ export default function Navigation() {
             아이폰 목업
           </NavLink>
         </li>
+        <li>
+          <NavLink to='infinite' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            무한 스크롤
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )

@@ -1,18 +1,17 @@
-import { useEffect, useRef } from 'react'
+import { RefObject, useEffect, useRef } from 'react'
 
 interface IProps {
+  ref: RefObject<HTMLElement>
   disable: boolean
   hasNextPage: boolean
   fetchCallback: (page: number) => Promise<void>
 }
 
-export default function useInfiniteScroll({ disable, hasNextPage, fetchCallback }: IProps) {
+export default function useInfiniteScroll({ ref, disable, hasNextPage, fetchCallback }: IProps) {
   const page = useRef(1)
-  const rootRef = useRef<HTMLDivElement>(null)
-  const targetRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
-    if (!targetRef.current || disable || !hasNextPage) return undefined
+    if (!ref.current || disable || !hasNextPage) return undefined
 
     const handleObserver = (entries: IntersectionObserverEntry[]) => {
       const target = entries[0]
@@ -23,18 +22,15 @@ export default function useInfiniteScroll({ disable, hasNextPage, fetchCallback 
     }
 
     const option = {
-      root: rootRef.current,
       rootMargin: '0px',
       threshold: 0,
     }
     const observer = new IntersectionObserver(handleObserver, option)
-    observer.observe(targetRef.current)
+    observer.observe(ref.current)
 
     return () => {
       observer && observer.disconnect()
       page.current = 1
     }
-  }, [disable, fetchCallback, hasNextPage])
-
-  return { targetRef, rootRef }
+  }, [disable, fetchCallback, hasNextPage, ref])
 }

@@ -1,0 +1,55 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+.wrapper {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid colors.$GRAY4;
+  border-radius: 5px;
+
+  .imgBox {
+    img {
+      width: 100px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  .infoList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 120px;
+    padding: 5px 0 0 10px;
+
+    li {
+      display: flex;
+
+      &.title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 22px;
+        text-align: left;
+      }
+
+      &.info {
+        color: colors.$GRAY4;
+
+        span {
+          padding-right: 3px;
+        }
+      }
+    }
+
+    .icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      color: colors.$BLUE;
+    }
+  }
+}
