@@ -37,7 +37,7 @@ export default function Navigation() {
           </NavLink>
         </li>
         <li>
-          <NavLink to='infinite' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+          <NavLink to='infinite?search=iron+man' className={({ isActive }) => cx({ [styles.active]: isActive })}>
             무한 스크롤
           </NavLink>
         </li>
