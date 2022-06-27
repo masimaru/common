@@ -1,6 +1,7 @@
 import LoginForm from 'components/LoginForm/LoginForm'
 import Navigation from 'components/Navigation/Navigation'
 import DropdownPage from 'pages/DropdownPage'
+import IphonePage from 'pages/IphonePage'
 import SliderPage from 'pages/SliderPage'
 import TabMenuPage from 'pages/TabMenuPage'
 import TogglePage from 'pages/TogglePage'
@@ -24,6 +25,7 @@ export default function App() {
           <Route path='TabMenu' element={<TabMenuPage />} />
           <Route path='toggle' element={<TogglePage />} />
           <Route path='dropdown' element={<DropdownPage />} />
+          <Route path='iphone' element={<IphonePage />} />
 
           <Route path='*' element={<div>404</div>} />
         </Routes>

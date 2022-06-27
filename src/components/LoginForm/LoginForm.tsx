@@ -24,13 +24,16 @@ export default function LoginForm({ type }: IProps) {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
 
-    if (pwd !== confirmPwd) {
+    if (type === 'register' && pwd !== confirmPwd) {
       setErrorMeg('비밀번호가 일치하지 않습니다.')
       setPwd('')
       setConfirmPwd('')
       return
     }
 
+    setEmail('')
+    setPwd('')
+    if (type === 'register') setConfirmPwd('')
     setErrorMeg('')
   }
 

@@ -31,6 +31,11 @@ export default function Navigation() {
             드롭다운
           </NavLink>
         </li>
+        <li>
+          <NavLink to='iphone' className={({ isActive }) => cx({ [styles.active]: isActive })}>
+            아이폰 목업
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )
