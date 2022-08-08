@@ -1,19 +1,16 @@
-import { ChangeEventHandler, useState } from 'react'
+import { ChangeEventHandler } from 'react'
 import styles from './toggleTextSwitch.module.scss'
 
 interface IProps {
+  value: number
   name: string
   dataList: { id: string; text: string }[]
+  handleToggle: (value: number) => void
 }
 
-export default function ToggleTextSwitch({ name, dataList }: IProps) {
-  const [currentId, setCurrentId] = useState(0)
+export default function ToggleTextSwitch({ value, name, dataList, handleToggle }: IProps) {
   const size = dataList.length
-
-  const handleClick: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const { value } = e.target
-    setCurrentId(Number(value))
-  }
+  const handleClick: ChangeEventHandler<HTMLInputElement> = (e) => handleToggle(Number(e.target.value))
 
   const sliderStyle = (id: number) => ({
     '--size': `calc(100% / ${size})`,
@@ -23,23 +20,21 @@ export default function ToggleTextSwitch({ name, dataList }: IProps) {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.toggleBox}>
-        {dataList.map((data, index) => (
-          <div className={styles.inputBox} key={data.id}>
-            <input
-              type='checkbox'
-              id={`${name}-${data.id}`}
-              name={name}
-              value={index}
-              onChange={handleClick}
-              checked={currentId === index}
-            />
-            <label htmlFor={`${name}-${data.id}`}>{data.text}</label>
-          </div>
-        ))}
+      {dataList.map((data, index) => (
+        <div className={styles['input-box']} key={data.id}>
+          <input
+            type='checkbox'
+            id={`${name}-${data.id}`}
+            name={name}
+            value={index}
+            onChange={handleClick}
+            checked={value === index}
+          />
+          <label htmlFor={`${name}-${data.id}`}>{data.text}</label>
+        </div>
+      ))}
 
-        <div className={styles.slider} style={sliderStyle(currentId)} />
-      </div>
+      <div className={styles.slider} style={sliderStyle(value)} />
     </div>
   )
 }

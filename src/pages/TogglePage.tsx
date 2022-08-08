@@ -1,4 +1,5 @@
 import ToggleTextSwitch from 'components/ToggleTextSwitch/ToggleTextSwitch'
+import { useState } from 'react'
 
 const dataList = [
   { id: 'none', text: '해당없음' },
@@ -8,5 +9,8 @@ const dataList = [
 ]
 
 export default function TogglePage() {
-  return <ToggleTextSwitch dataList={dataList} />
+  const [toggleValue, setToggleValue] = useState(0)
+  const handleToggle = (value: number) => setToggleValue(value)
+
+  return <ToggleTextSwitch name='test' dataList={dataList} value={toggleValue} handleToggle={handleToggle} />
 }
